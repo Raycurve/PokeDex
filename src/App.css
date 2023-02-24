@@ -11,7 +11,7 @@ pink be77be
 
 
 * body{
-  background-color: #00203FFF;
+  background-color: #181B1D;
 }
 
 *, *::after, *::before {
@@ -83,7 +83,7 @@ body {
 .card__side--front {
   /* background-color: rgba(200,100,0,.5);
   background-blend-mode: multiply; */
-  background-color: #be77be;
+  background-color: #edff43c2;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: fill;
@@ -124,6 +124,8 @@ body {
   text-transform: uppercase;
   font-size: 6rem;
   font-weight: 100;
+  color: #181B1D;
+  
 }
 .card__cover {
   position: relative;
@@ -282,10 +284,37 @@ body {
   
   width: 100vw;
   height: 100vh;
-  margin: auto;
+  overflow: hidden;
+
+  /* top: 50%;
+  left: 50%;  */
+  /* transform: translate(25%, 25%); */
+  position: absolute;
+  background-position: center;
+  /* margin: auto; */
   background-image: url('https://cdn.dribbble.com/users/621155/screenshots/2835314/simple_pokeball.gif');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 /* //nav footer */
 
+/* Header */
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: left;
+  padding-block-start: 1vh;
+  padding-inline-start: 1vw;
+  height: 10vh;
+  background-color: #ff0000c4;
+}
+.logo1{
+  height: inherit;
+
+}
+.ball{
+  height: inherit;
+  right: 0;
+}
