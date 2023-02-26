@@ -58,14 +58,14 @@ body {
 .card {
   flex: initial;
   position: relative;
-  height: 52rem;
+  height: 24rem;
   width: 48rem;
   -moz-perspective: 200rem;
   perspective: 200rem;
   margin: 2rem;
 }
 .card__side {
-  height: 56rem;
+  height: 40vh;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -87,10 +87,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: fill;
+  height: 40vh;
 }
 .card__side--back {
   background-color:#be77be;
-
+  height: 40vh;
   transform: rotateY(180deg);
 }
 .card:hover .card__side--back {
@@ -104,7 +105,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 90%;
+  top: 100%;
   width: 90%;
   text-align: center;
 }
@@ -130,9 +131,9 @@ body {
 .card__cover {
   position: relative;
   background-size: cover;
-  height: 25rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  height: 40vh;
+  /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); */
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background-image: linear-gradient(to top right, rgba(30, 11, 54, 0.65), rgba(202, 55, 130, 0.65)), url(https://c4.wallpaperflare.com/wallpaper/105/168/835/makoto-shinkai-sky-colorful-artwork-wallpaper-preview.jpg);
@@ -160,8 +161,8 @@ body {
 }
 .card__details ul {
   list-style: none;
-  width: 80%;
-  margin: 0 auto;
+  /* width: 80%; */
+  /* margin: 0 auto; */
 }
 .card__details ul li {
   text-align: left;
@@ -170,6 +171,49 @@ body {
 }
 .card__details ul li:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+.hova{
+  cursor:pointer;
+  
+}
+.hova {
+  --c: #fff; /* the color */
+  --b: .1em;    /* border length*/
+  --d: 20px;    /* the cube depth */
+  
+  --_s: calc(var(--d) + var(--b));
+  
+  color: var(--c);
+  border: solid #0000;
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background:
+    conic-gradient(at left var(--d)  bottom var(--d),
+      #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+    conic-gradient(at left var(--_s) bottom var(--_s),
+      #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+  transform: translate(calc(var(--d)/-1),var(--d));
+  clip-path: 
+    polygon(
+     var(--d) 0%, 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)),
+     100% calc(100% - var(--d)),
+     var(--d) calc(100% - var(--d))
+    );
+  transition: 0.5s;
+}
+.hova:hover {
+  transform: translate(0,0);
+  clip-path: 
+    polygon(
+     0% var(--d), 
+     var(--d) 0%, 
+     100% 0%, 
+     100% calc(100% - var(--d)), 
+     calc(100% - var(--d)) 100%, 
+     0% 100%
+   );
 }
 @media only screen and (max-width: 37.5em), only screen and (hover: none) {
   .card {
@@ -249,7 +293,7 @@ body {
   /* height: 50vh; */
   justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 90vw;
+  width: 80vw;
   margin: auto;
 }
 .maincard{
@@ -270,10 +314,11 @@ body {
   /* background-color: red; */
   background-position: center;
   margin-inline: auto;
-    margin-top: 7rem;
+  margin-top: 1rem;
+  margin-top: 2rem;
   /* padding: 10rem; */
   width: 28rem;
-  height: 30rem;
+  height: 19rem;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -300,15 +345,17 @@ body {
 
 /* Header */
 nav{
+  opacity: 1;
+  filter: alpha(opacity=50); 
   position: sticky;
   top: 0;
   z-index: 1;
   display: flex;
   justify-content: left;
-  padding-block-start: 1vh;
+  /* padding-block-start: 1vh; */
   padding-inline-start: 1vw;
   height: 10vh;
-  background-color: #ff0000c4;
+  background-color: #c40000;
 }
 .logo1{
   height: inherit;

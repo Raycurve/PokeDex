@@ -4,6 +4,7 @@ import './App.css';
 export default function Card({val,ur}){
     const [dat,setDat] =useState({});
     const [loading, setLoading] = useState(true)
+    const [skill, setSkill] = useState(false)
     useEffect(()=>{
         fetch(ur)
         .then((res)=>res.json())
@@ -23,10 +24,8 @@ export default function Card({val,ur}){
                             <div className="card__side card__side--back">
                                 <div className="card__cover">
                                     <h4 className="card__heading">
-                                    <span className="card__heading-span">Skill Set</span>
-                                    </h4>
-                                </div>
-                                    <div className="card__details">
+                                    <span className="card__heading-span" onClick={()=>setSkill(!skill)}>
+                                        {skill?<div className="card__details">
                                         {!loading? 
                                             <ul>
                                                 <li style={{ textTransform: 'uppercase'}}>Name: {dat.name}</li>
@@ -41,7 +40,13 @@ export default function Card({val,ur}){
                                     
                                         }
                                         
-                                    </div>
+                                    </div>:<p className='card_heading-span hova'>Skill Set</p>
+
+                                        }
+                                    </span>
+                                    </h4>
+                                </div>
+                                    
                             </div>
                             <div className="card__side card__side--front"  > 
                                 <div className='Ima'  style={!loading ? {backgroundImage: `url(${dat.sprites.other.dream_world.front_default})`} : {backgroundImage:    `url('https://media.baamboozle.com/uploads/images/125978/1629738053_29014_gif-url.gif')` }}></div>
